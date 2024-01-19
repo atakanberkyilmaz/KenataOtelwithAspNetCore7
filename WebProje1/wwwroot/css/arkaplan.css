@@ -1,0 +1,15 @@
+.resim {
+    background: url("https://c4.wallpaperflare.com/wallpaper/787/399/647/life-resort-travel-vacation-wallpaper-preview.jpg");
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+
+.resim h1{
+    color:white;
+    position:relative;
+    top:40%;
+    font-size:60px;
+}
+
+

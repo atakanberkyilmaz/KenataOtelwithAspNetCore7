@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KenataOtel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KenataOtel.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
+            <div class="container-fluid">
+                <a style="font-weight:bold;" class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">KenataOtel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Home" asp-action="Contact">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Home" asp-action="Hizmet">Hizmetlerimiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Booking" asp-action="RoomIndex">Odalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight:bold;" class="nav-link text-dark " asp-area="" asp-controller="Booking" asp-action="Index">Yönetici Girişi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="maincontainer">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center">
+        <div class="footercontainer">
+            &copy; 2023 - Kenataotel.com - <a>Tüm Hakları Saklıdır</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@model WebProje1.Models.Booking;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Rezervasyon Ekranı";
+}
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="~/css/servervalidation.css" />
+
+
+<div style="margin:50px;">
+    <h3 style="color:#031454;">@ViewData["Title"]</h3>
+    <br />
+
+    <form class="form-group" method="post" id="rezervasyonForm">
+        Ad Soyad
+        @Html.TextBoxFor(x=>x.MusteriAdi, new{ @class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.MusteriAdi)
+        <br />
+        <br />
+        Telefon Numarası
+        @Html.TextBoxFor(x=>x.MusteriTelNo, new{ @class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.MusteriTelNo)
+        <br />
+        <br />
+        Adres
+        @Html.TextBoxFor(x=>x.MusteriAdresi, new{ @class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.MusteriAdresi)
+        <br />
+        <br />
+        Kalacak Kişi Sayısı
+        @Html.CustomTextBoxFor(x=>x.KalacakKisiSayisi, new{ @class = "form-control"})
+        
+        <br />
+        <br />
+        Giriş Tarihi
+        @Html.CustomTextBoxFor(x=>x.GirisTarihi, new { @class = "dateInput form-control", @placeholder = "YYYY-AA-GG" })
+        
+        <br />
+        <br />
+        Çıkış Tarihi
+        @Html.CustomTextBoxFor(x=>x.CikisTarihi, new { @class = "dateInput form-control", @placeholder = "YYYY-AA-GG" })
+        
+        <br />
+        <br />
+        <button class="btn btn-info" style="width:200px; color:white; background-color:#031454; margin-bottom:20px;" onclick="confirmReservation()">Rezervasyon Yap</button>
+
+    </form>
+
+    <script>
+        function confirmReservation() {
+
+            if ($("#rezervasyonForm").valid()) {
+
+                swal("Rezervasyon Başarılı!", "Rezervasyonunuz başarıyla alındı.", "success");
+            }
+        }
+
+
+        $(document).ready(function () {
+            $("#rezervasyonForm").validate();
+        });
+    </script>
+
+@section Scripts
+    {
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    }
+   
+</div>

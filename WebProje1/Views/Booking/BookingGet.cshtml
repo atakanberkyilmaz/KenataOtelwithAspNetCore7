@@ -1,0 +1,48 @@
+﻿@model WebProje1.Models.Booking;
+@{
+    ViewData["Title"] = "Rezervasyon Güncelleme";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<div style="margin:50px;">
+    <h3 style="color:#031454;">@ViewData["Title"]</h3>
+
+    @using(Html.BeginForm("BookingUpdate","Booking",FormMethod.Post))
+    {
+        <b>Rezervasyon ID</b>
+        @Html.TextBoxFor(x=>x.MusteriId, new{ @class = "form-control"})
+        <br />
+        <b>Ad Soyad</b>
+        @Html.TextBoxFor(x=>x.MusteriAdi, new{ @class = "form-control"})
+        <br />
+        <b>Telefon Numarası</b>
+        @Html.TextBoxFor(x=>x.MusteriTelNo, new{ @class = "form-control"})
+        <br />
+        <b>Adres</b>
+        @Html.TextBoxFor(x=>x.MusteriAdresi, new{ @class = "form-control"})
+        <br />
+        <b>Kalacak Kişi Sayısı</b>
+        @Html.TextBoxFor(x=>x.KalacakKisiSayisi, new{ @class = "form-control"})
+        <br />
+        <b>Giriş Tarihi</b>
+        @Html.TextBoxFor(x=>x.GirisTarihi, new { @class = "dateInput form-control", @placeholder = "YYYY-AA-GG" })
+        <br />
+        <b>Çıkış Tarihi</b>
+        @Html.TextBoxFor(x=>x.CikisTarihi, new { @class = "dateInput form-control", @placeholder = "YYYY-AA-GG" })
+        <br />
+        <button class="btn btn-info" style="width:200px; color:white; background-color:#031454; margin-bottom:20px;" onclick="myFunction()">Rezervasyon Güncelle </button>
+    }
+
+    <script>
+        function myFunction() {
+            swal({
+                title: "İşlem Başarılı!",
+                text: "Rezervasyonunuz güncellenmiştir",
+                icon: "success",
+                button: "Tamam",
+            });
+        }
+    </script>
+
+</div>

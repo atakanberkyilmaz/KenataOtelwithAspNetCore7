@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/admin.css" />
+<link rel="stylesheet" href="https://htmlstream.com/front-dashboard/assets/css/theme.min.css" />
+
+
+<style>
+        .main-menu {
+        background: #031454;
+        border-right: 1px solid #e5e5e5;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        width: 60px;
+        overflow: hidden;
+        -webkit-transition: width .05s linear;
+        transition: width .05s linear;
+        -webkit-transform: translateZ(0) scale(1,1);
+        z-index: 1000;
+
+    }
+
+        .main-menu li>a {
+        position:relative;
+        display:table;
+        border-collapse:collapse;
+        border-spacing:0;
+        color:white;
+        font-family: arial;
+        font-size: 14px;
+        text-decoration:none;
+        -webkit-transform:translateZ(0) scale(1,1);
+        -webkit-transition:all .1s linear;
+        transition:all .1s linear;
+    }
+
+        .ana {
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+    }
+
+</style>
+
+
+
+<div>
+    <div class="ana col-sm-7 col-md-5 text-center" style="margin:150px;">
+        <img src="https://htmlstream.com/front-dashboard/assets/svg/illustrations/oc-collaboration.svg" style="width:100%; height:300px;">
+        <br />
+        <br />
+        <h1>Sayın Yönetici Hoş Geldiniz </h1>
+        <p>Yönetici işlemlerini buradan rahatlıkla yapabilirsiniz. Yöneticiliğin keyfini çıkarın!</p>
+        <a class="btn btn-primary" style="width:250px; background-color:#031454;" href="/Booking/Index/">İlk Görevini Yap!</a>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            <h3 style="font-family:sans-serif; text-align:center; color:#fff;">Admin Menü</h3>
+            <li>
+                <a href="#">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+                </a>
+
+            </li>
+
+            <li>
+                <a href="/Booking/Index/">
+                    <i class="fa fa-table fa-2x"></i>
+                    <span class="nav-text">
+                        Rezervasyonlar
+                    </span>
+                </a>
+            </li> 
+
+        </ul>
+
+        <ul class="logout">
+            <li>
+                <a href="/Home/Index/">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Çıkış Yap
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

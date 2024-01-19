@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Hakkımızda";
+}
+
+<link rel="stylesheet" href="~/css/hakkinda.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#flip").click(function () {
+            $("#panel").slideDown("slow");
+        });
+    });
+</script>
+
+<div style="margin:50px;">
+
+
+    <div id="flip">Hakkımızda
+
+        <img src="https://www.freeiconspng.com/uploads/scroll-icon-23.png" width="20"/></a>
+    </div>
+
+    <div id="panel">
+        Kenata Otel 2023 yılında Atakan Berk Yılmaz ve Kenancan Aslan tarafından kurulmuş olup,
+        kurulduğu günden bu yana turizm ve otelcilik sektöründe işletmeci ve yatırımcı kimliğini bir arada bulundurarak büyüyen tek yerli markadır.
+        Kenata Otel halen Türkiye’nin yerli sermayeli en önemli otellerindendir.
+        Ana iş odağı şehir otelciliği olan Kenata Otel olarak hizmet anlayışımız
+        ‘’seyahat eden iş adamlarına konforlu konaklama deneyimi ve bulunduğu bölgede kongre, toplantı ve davetler için kaliteli hizmeti sunmaktır.
+        En uygun fiyata en kaliteli hizmeti sunma vizyonuyla çıktığımız bu yolculukta birlikte büyüyor, sizlere hizmet vermenin gururunu yaşıyoruz.
+    </div>
+
+    <br />
+
+    <h2 style="text-align:center">Kurucularımız</h2>
+
+    <br />
+    <div style="text-align:center;" class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Atakan Berk YILMAZ</h2>
+                    <p class="title">Frontend Developer</p>
+                    <p>ati@isubu.com</p>
+                    <a href="https://isparta.edu.tr/">
+                        <p><button class="button">İletişim</button></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Kenancan ASLAN</h2>
+                    <p class="title">Backend Developer</p>
+                    <p>keno@isubu.com</p>
+                    <a href="https://isparta.edu.tr/">
+                        <p><button class="button">İletişim</button></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

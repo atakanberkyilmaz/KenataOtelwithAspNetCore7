@@ -1,0 +1,60 @@
+﻿@using WebProje1.Models;
+@model List<Booking>
+
+@{
+    ViewData["Title"] = "Rezervasyonlar";
+}
+
+<div style="margin:50px;">
+    <h3 style="color:#031454;">@ViewData["Title"]</h3>
+    <br />
+    <br />    
+    <table class="table table-bordered" style="width:100%" id="urunTable">
+        <thead>
+            <tr>
+                <th>Rezervasyon ID</th>
+                <th>Ad Soyad</th>
+                <th>Telefon Numarası</th>
+                <th>Adres</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+                <th>Kalacak Kişi Sayısı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.MusteriId</td>
+                    <td>@x.MusteriAdi</td>
+                    <td>@x.MusteriTelNo</td>
+                    <td>@x.MusteriAdresi</td>
+                    <td>@x.GirisTarihi</td>
+                    <td>@x.CikisTarihi</td>
+                    <td>@x.KalacakKisiSayisi</td>
+                    <td> <a href="/Booking/BookingDel/@x.MusteriId" class="btn btn-danger">Sil</a> </td>
+                    <td> <a href="/Booking/BookingGet/@x.MusteriId" class="btn btn-success">Güncelle</a> </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        var table = $("#urunTable").DataTable(
+            {
+                "scrollCollapse": true,
+                "paging": true,
+                
+                
+            });
+    </script>
+}
+
+
